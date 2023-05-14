@@ -1,0 +1,147 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+}
+
+.grid {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto auto 1fr auto auto;
+    grid-template-areas:
+        "header"
+        "filter"
+        "main"
+        "paginador"
+        "footer";
+}
+
+header {
+    grid-area: header;
+    background-color: hsl(195, 2%, 68%);
+    color: hwb(180 15% 84%);
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 30px;
+}
+
+header p i{
+    color:#4c4cf1;
+}
+
+filter{
+    grid-area: filter;
+    background-color: #EAEAEC;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 10px 10px 10px;
+}
+
+.filter__select {
+    width: 60%;
+}
+
+main {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    overflow: auto;
+}
+.paginador {
+    grid-area: paginador;
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+}
+
+
+footer {
+    grid-area: footer;
+    background-color: #828481;
+    color: #EAEAEC;
+    text-align: center;
+}
+
+.container-products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 3px 3px #dddddd;
+}
+
+.card__image {
+    width: 100%;
+}
+
+.card__title {
+    padding: 4px;
+}
+
+.card__btn {
+    background-color: #0a3cee;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    padding: 10px 15px;
+    color: #fff;
+}
+
+.header__menu {
+    display: none;
+}
+
+@media(min-width: 576px) {
+    .grid {
+       
+        grid-template-areas:
+            "header filter"
+            "header main"
+            "footer paginador";
+    }
+    main {
+        grid-area: main;
+        overflow: auto;
+    }
+
+    .container-products {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        align-items: center;
+       
+    }
+
+    .d-none {
+        display: none;
+    }
+
+    header {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+    }
+
+    .header__menu {
+        display: inline-block;
+        margin-top: 30px;
+    }
+
+    .header__menu li {
+        list-style: none;
+    }
+}
